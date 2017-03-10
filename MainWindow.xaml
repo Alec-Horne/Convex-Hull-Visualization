@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Convex Hull Demonstration" Height="569.802" Width="674.022" WindowStyle="ThreeDBorderWindow" BorderThickness="0" BorderBrush="#FFCFBFBF">
+    <Canvas Name="myCanvas" RenderTransformOrigin="0.5,0.5" Margin="0,0,-8,113">
+        <Canvas.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Canvas.RenderTransform>
+        <Button x:Name="button2" Content="Clear Canvas" Canvas.Left="370" Canvas.Top="484" Width="81" Click="button2_Click" Height="22"/>
+        <Menu x:Name="menu" Height="25" Width="675" BorderThickness="1" Background="White">
+            <MenuItem Header="File" Height="22" Width="73">
+                <MenuItem Header="Open File" HorizontalAlignment="Left" Width="146" Margin="0,0,-6,0" Click="MenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+        <GroupBox x:Name="lineThicknessGB" Header="Line Thickness" Canvas.Top="470" Height="48" Width="164">
+            <Slider x:Name="slider1" HorizontalAlignment="Left" Margin="10,0,-2,-2" VerticalAlignment="Top" Width="144" Height="28" ValueChanged="slider1_ValueChanged" TickPlacement="BottomRight" Minimum="1" Value="3"/>
+        </GroupBox>
+        <Separator Height="31" Margin="0" Canvas.Top="406" Width="675"/>
+        <GroupBox x:Name="groupBox" Header="Place Points" Canvas.Left="164" Canvas.Top="423" Height="95" Width="203">
+            <Grid HorizontalAlignment="Left" Height="75" Margin="0,10,-2,-12" VerticalAlignment="Top" Width="193">
+                <TextBox x:Name="textBox" TextWrapping="Wrap" Margin="118,0,27,50"/>
+                <Button x:Name="draw" Content="Set Points" Click="draw_Click" RenderTransformOrigin="1.182,-0.145" Margin="57,31,55,20"/>
+                <Label x:Name="label" Content="Number of points:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Margin="10,-1,0,0"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="Algorithm" Canvas.Left="527" Canvas.Top="423" Height="95" Width="127">
+            <Grid HorizontalAlignment="Left" Height="85" VerticalAlignment="Top" Width="117" Margin="0,-8,-2,-22">
+                <Button x:Name="button" Content="Graham Scan" Click="on_Click" RenderTransformOrigin="0.225,2.231" Margin="5,35,5,30"/>
+                <Button x:Name="button3" Content="Onion Peeling" Click="button3_Click" Margin="5,60,5,5"/>
+                <Button x:Name="button1" Click="button1_Click" Content="Jarvis March" Margin="5,10,5,55"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="pointSizeGB" Header="Point Size" Canvas.Top="423" Height="48" Width="164">
+            <Slider x:Name="slider" HorizontalAlignment="Left" Margin="10,0,-2,-2" VerticalAlignment="Top" Width="144" Height="28" Maximum="20" SmallChange="1" ValueChanged="slider_ValueChanged" Minimum="1" Value="5" TickPlacement="BottomRight"/>
+        </GroupBox>
+        <GroupBox x:Name="animationSpeedGB" Header="Animation Speed" Canvas.Top="423" Height="48" Width="160" Canvas.Left="367">
+            <Slider x:Name="slider2" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="144" Height="28" Maximum="1000" SmallChange="50" ValueChanged="slider2_ValueChanged" Minimum="5" Value="200" TickPlacement="BottomRight" TickFrequency="50"/>
+        </GroupBox>
+        <Button x:Name="pauseButton" Content="Pause" HorizontalAlignment="Left" VerticalAlignment="Top" Width="69" Click="pauseButton_Click" Canvas.Left="456" Canvas.Top="484" Height="22"/>
+    </Canvas>
+</Window>
